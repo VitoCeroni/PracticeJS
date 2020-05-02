@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+		let words = [
+			"картошка",
+			"яблоко",
+			"телевизор",
+			"любовь",
+			"игра",
+			"алкоголь",
+			"восприятие",
+			"роутер",
+			"вселенная",
+            "заземление",
+            "клетка",
+            "церковь",
+            "квартира",
+            "карантин",
+            "привычка",
+            "пульт",
+            "интернет",
+            "задача",
+            "клавиша",
+            "мышь",
+            "природа",
+		];
+		
+		let word = words[Math.floor(Math.random() * words.length)];
+		let answerArray = [];
+		for ( let i = 0; i < word.length; i++) {
+			answerArray[i] = " _ ";
+		}
+        		
+		let remainingLetters = word.length;
+
+		while ( remainingLetters > 0 ) {
+			alert("Отгадайте слово  " + answerArray.join(" "));
+
+		let letter = prompt(" Ваша буква? ", " ");
+		if ( letter === null) {
+			break;
+		} else if ( letter.length !== 1) {
+			alert(" Введите ОДНУ букву ");
+		} else {
+			for ( let j = 0; j < word.length; j++) {
+				if ( word[j] === letter ) {
+					answerArray[j] = letter.toUpperCase();
+					remainingLetters--;
+				}
+			}
+		}
+		}
+
+        if ( remainingLetters == 0 ) { 
+		alert(answerArray.join(""));
+		alert("Молодец ! Действительно было слово " + word.toUpperCase());
+        } else {
+            alert("Сыграем в другой раз");
+        }
+    </script>
+</body>
+</html>
