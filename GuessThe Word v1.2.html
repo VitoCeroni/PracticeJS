@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // *-* Слова *-*
+		let words = [
+			"картошка",
+			"яблоко",
+			"телевизор",
+			"любовь",
+			"игра",
+			"алкоголь",
+			"восприятие",
+			"роутер",
+			"вселенная",
+            "заземление",
+            "клетка",
+            "церковь",
+            "квартира",
+            "карантин",
+            "привычка",
+            "пульт",
+            "интернет",
+            "задача",
+            "клавиша",
+            "мышь",
+            "природа",
+		];
+		
+        // *-* Рандом и Данные *-*
+
+		let word = words[Math.floor(Math.random() * words.length)];
+		let answerArray = [];
+		for ( let i = 0; i < word.length; i++) {
+			answerArray[i] = " _ ";
+		}		
+		let remainingLetters = word.length;
+		let atempts = 4;	
+
+        // *-* Цикл игры *-*
+
+		while ( atempts != 0 ) {
+			alert("\n" + " Осталось жизней " + atempts + "\n" + "\n" + " Отгадайте слово " + answerArray.join(" "));
+		    let letter = prompt(" Ваша буква? ", " ");
+
+        // *-* Цикл ввода буквы *-*
+
+		if ( letter === "игра") {
+			break;
+		} else if ( letter.length !== 1) {
+			alert("\n" + " Введите ОДНУ букву ");
+		} else {
+			for ( let j = 0; j < word.length; j++) {
+				if ( word[j] === letter ) {
+					answerArray[j] = letter.toUpperCase();
+					remainingLetters--;
+					atempts--;
+				}
+			}
+		}
+		
+        // *-* Сообщение на последнюю попытку *-*
+
+		if ( atempts == 1 ) {
+			alert("\n" + "Последняя попытка!");
+		}
+
+		}
+
+        // *-* Результат *-*
+		
+        if ( remainingLetters == 0 ) { 
+		    alert(answerArray.join(""));
+		    alert("\n" + "Молодец ! Действительно было слово " + word.toUpperCase());
+        } else if ( atempts == 0 ) {
+			alert("\n" + "Вы проиграли ! Слово было: " +  word.toUpperCase());
+		} else if ( letter = "игра" ) {
+            alert("\n" + "Супер! Отгадали слово полностью!"  + "\n" + "\n" +  word.toUpperCase());
+        }
+		
+    </script>
+</body>
+</html>
