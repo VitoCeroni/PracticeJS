@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // *-* Слова *-*
+		let words = [
+			"ипотека",
+			"игра",
+			"козырь",
+			"лето",
+			"ученик",
+			"кружка",
+			"балкон",
+			"аплодисменты",
+			"церковь",
+			"шифанер",
+			"щавель",
+			"республика",
+			"мост",
+			"пение",
+		];
+		
+        // *-* Рандом и Данные *-*
+
+		let word = words[Math.floor(Math.random() * words.length)];
+		let answerArray = [];
+		for ( let i = 0; i < word.length; i++) {
+			answerArray[i] = " __ ";
+		}		
+		let remainingLetters = word.length;
+		let atempts = 10;
+		let repeatedLetters	= [];
+
+        // *-* Цикл игры *-*
+
+		NextLetter:
+		while ( remainingLetters != 0 && atempts != 0 ) {
+			alert("\n" + " Количество попыток " + atempts + "\n"  + " Отгадайте слово " + "\n" + "\n" + answerArray.join(" "));
+		    let letter = prompt(" Ваша буква? ", " ");
+			
+			// *-* Проверка на повторный ввод *-*		
+
+			for ( let enteredLetter of repeatedLetters ) {
+				if ( enteredLetter == letter ) {
+					alert(" Вы уже вводили эту букву ! ");
+					continue NextLetter;
+				}
+			}
+			if ( letter != 0 ) {
+				repeatedLetters.push ( letter );
+			}
+			
+			// *-* Ввод буквы *-*
+
+			for ( let j = 0; j < word.length; j++) {
+				if ( word[j] === letter ) {
+					answerArray[j] = letter.toUpperCase();
+					alert("\n" + "Откройте букву " + answerArray[j].toUpperCase() + " ! " );
+					remainingLetters--;
+					continue NextLetter;					
+				}
+			}			
+
+			if ( letter === words[0]) {
+				break;
+			} else if ( letter == " " ) {
+				alert(" Вы не ввели букву ");
+			} else if ( atempts == 0 ) {
+				break;
+			} else if ( letter.length !== 1) {
+				alert("\n" + " Введите ОДНУ букву ");
+			} else {
+				atempts--;
+				alert("\n" +" Нет такой буквы в этом слове ! ");
+			}
+		}
+
+        // *-* Результат *-*
+		
+        if ( remainingLetters == 0 ) { 
+		    alert(answerArray.join(""));
+		    alert("\n" + "Молодец ! Действительно было слово " + word.toUpperCase());
+        } else if ( atempts == 0 ) {
+			alert("\n" + "Вы проиграли ! Слово было: " +  word.toUpperCase());
+		} else if ( letter = words[0] ) {
+            alert("\n" + "Супер! Отгадали слово сразу!"  + "\n" + "\n" +  word.toUpperCase());
+        }
+
+    </script>
+</body>
+</html>
+
