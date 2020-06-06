@@ -1,0 +1,34 @@
+input {
+    width: 200px;
+    height: 50px;
+    border-radius: 25px;
+    background: antiquewhite;
+    font-family: sans-serif;
+    font-weight: 900;
+    font-size: larger;
+    outline: none;
+}
+#scenetext {
+    text-align: center;
+    font-family: sans-serif;
+    padding: 2% 25%;
+    line-height: 30px;
+    letter-spacing: 1.5px;
+}
+.decision {
+    border: 2px solid darkcyan;
+    padding: 1%;
+    font-family: cursive;
+    cursor: pointer;
+}
+.decisionhover {
+    border: 2px solid darkcyan;
+    padding: 1%;
+    font-family: cursive;
+    cursor: pointer;
+    background-color: rosybrown;
+}
+#history {
+    font-family: monospace;
+    padding-top: 5%;
+}

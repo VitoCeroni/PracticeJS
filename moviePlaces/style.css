@@ -1,0 +1,13 @@
+div.kino {
+    text-align: center;
+    padding-top: 100px;
+}
+#findseats {
+padding: 5%;
+margin-top: 40px;
+font-family: monospace;
+background: antiquewhite;
+border-radius: 50px;
+font-size: 22px;
+outline: none;
+}

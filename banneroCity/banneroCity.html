@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title></title>
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+  <form>
+    <div class="frame">
+        <img src="pilot.png" alt="pilot">
+        <div class="field-box">
+            <div class="field">
+                <p>Enter the banner message:</p>
+                <input type="text" id="message" name="message" size="32" 
+                onblur="validateLengh(1, 32, this, document.getElementById('message_help'))">
+                <span id="message_help" class="help"></span>
+            </div>
+            <div class="field">
+                <p>Enter ZIP code of the location:</p>
+                <input type="text" id="zipcode" name="zipcode" size="5"
+                onblur="validateZIPCode(this, document.getElementById('zipcode_help'))">
+                <span id="zipcode_help" class="help"></span>
+            </div>
+            <div class="field">
+                <p>Enter the date:</p>
+                <input type="date" id="dateshown" name="dateshown" size="8" 
+                onblur="validateNonEmpty(this, document.getElementById('date_shown_help'))">
+                <span id="date_shown_help" class="help"></span>
+            </div>
+            <div class="field">
+                <p>Enter your name:</p>
+                <input type="text" id="yourname" name="yourname" 
+                onblur="validateNonEmpty(this, document.getElementById('name_help'))">
+                <span id="name_help" class="help"></span>
+            </div>
+            <div class="field">
+                <p>Enter your phone number:</p>
+                <input type="text" id="phone" name="phone" 
+                onblur="validatePhone(this, document.getElementById('phone_help'))">
+                <span id="phone_help" class="help"></span>
+            </div>
+            <div class="field">
+                <p>Enter your email address:</p>
+                <input type="email" id="email" name="email" 
+                onblur="validateEmail(this, document.getElementById('email_help'))">
+                <span id="email_help" class="help"></span>
+            </div>
+        </div>
+        <input type="button" id="orderbanner" value="Order Banner" onclick="placeOrder(this.form);">
+    </div>
+  </form>
+</body>
+</html>

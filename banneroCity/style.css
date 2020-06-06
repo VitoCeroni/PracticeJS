@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+div.frame {
+    padding: 5% 25%;
+}
+.field-box {
+    border: 2px solid #94a89c;
+    display: flex;
+    flex-direction: column;
+    padding: 3%;
+    background-color: #e3e8e5;
+    margin: 3% 0%;
+}
+.field {
+    display: flex;
+    padding: 2%;
+    background-color: #e3e8e5;
+    justify-content: flex-start;
+}
+p {
+    margin-right: 2%;
+}
+#orderbanner {
+    display: flex;
+    margin-left: auto;
+    display: flex;
+    margin-left: auto;
+    padding: 3%;
+    font-family: monospace;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+span {
+    color: rebeccapurple;
+    margin-left: 1%;
+}
